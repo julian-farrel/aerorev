@@ -1,21 +1,20 @@
 import type { Metadata } from "next"
-import localFont from "next/font/local"
-import { Geist } from "next/font/google"
+import { Michroma, Orbitron } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-// 1. Load the local font file you just added
-const bbhBartle = localFont({
-  src: "./fonts/BBHSansBartle-Regular.ttf", // ⚠️ Make sure this filename matches exactly!
+// 1. Primary Font: Michroma (Wide, Bold, Futuristic)
+const michroma = Michroma({
+  weight: "400",
+  subsets: ["latin"],
   variable: "--font-heading",
-  weight: "700",
   display: "swap",
 })
 
-// 2. Secondary font (Geist)
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 2. Secondary Font: Orbitron (Futuristic, Geometric)
+const orbitron = Orbitron({
   subsets: ["latin"],
+  variable: "--font-orbitron", // Renamed variable
   display: "swap",
 })
 
@@ -34,8 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* 3. Apply the variables to the body */}
-      <body className={`${bbhBartle.variable} ${geistSans.variable} font-sans antialiased`}>
+      <body className={`${michroma.variable} ${orbitron.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
