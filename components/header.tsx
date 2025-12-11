@@ -11,13 +11,12 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+
           <Link href="/" className="flex items-center gap-2 font-serif text-2xl font-bold tracking-tight">
             <div className="w-8 h-8 bg-foreground rounded"></div>
-            <span>Custom Apparel Studio</span>
+            <span>Aerorev</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium hover:text-accent transition-colors">
               Home
