@@ -1,8 +1,17 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+// 1. Import Montserrat
+import { Montserrat } from "next/font/google"
+
+// 2. Configure for ExtraBold (weight 800)
+const montserrat = Montserrat({ 
+  subsets: ["latin"], 
+  weight: "800" 
+})
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,9 +21,16 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          <Link href="/" className="flex items-center gap-2 font-serif text-2xl font-bold tracking-tight">
-            <div className="w-8 h-8 bg-foreground rounded"></div>
-            <span>Aerorev</span>
+          <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight">
+            <Image 
+              src="/aerorev.jpg" 
+              alt="Aerorev Logo" 
+              width={32} 
+              height={32} 
+              className="rounded-md object-cover"
+            />
+            {/* 3. Apply ExtraBold font class */}
+            <span className={montserrat.className}>aerorev</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

@@ -2,6 +2,14 @@
 
 import { Header } from "@/components/header"
 import { ScrollAnimation } from "@/components/scroll-animation"
+// 1. Import the Montserrat font
+import { Montserrat } from "next/font/google"
+
+// 2. Configure the font (loading the ExtraBold weight '800')
+const montserrat = Montserrat({ 
+  subsets: ["latin"], 
+  weight: "800" 
+})
 
 export default function Home() {
   return (
@@ -12,7 +20,8 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <ScrollAnimation animation="fadeIn">
             <div className="text-center space-y-6">
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-balance leading-tight">
+              {/* 3. Applied Montserrat ExtraBold (800) */}
+              <h1 className={`${montserrat.className} text-5xl md:text-6xl font-extrabold text-balance leading-tight`}>
                 Your Custom Apparel, Crafted with Care
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
@@ -27,7 +36,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollAnimation animation="slideRight" delay={0}>
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">About Us</h2>
+                {/* Updated to Montserrat ExtraBold */}
+                <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>About Us</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   We are a passionate team dedicated to bringing your apparel vision to life. With over a decade of
                   experience in custom design and manufacturing, we take pride in creating premium quality garments that
@@ -55,7 +65,8 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
           <ScrollAnimation animation="slideUp">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Services</h2>
+              {/* Updated to Montserrat ExtraBold */}
+              <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-4`}>Our Services</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Custom design, printing, embroidery, and more
               </p>
@@ -88,7 +99,8 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
           <ScrollAnimation animation="slideUp">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Apparel</h2>
+              {/* Updated to Montserrat ExtraBold */}
+              <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-4`}>Our Apparel</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore our collection of premium quality garments
               </p>
@@ -121,7 +133,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <ScrollAnimation animation="slideLeft" delay={0}>
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Visit Us</h2>
+                {/* Updated to Montserrat ExtraBold */}
+                <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>Visit Us</h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Location</h3>
@@ -169,7 +182,8 @@ export default function Home() {
         {/* CTA Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border text-center">
           <ScrollAnimation animation="slideUp">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Create Something Amazing?</h2>
+            {/* Updated to Montserrat ExtraBold */}
+            <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>Ready to Create Something Amazing?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Start your custom apparel journey today
             </p>
@@ -189,7 +203,7 @@ export default function Home() {
       <footer className="bg-card border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-muted-foreground">
-            <p>&copy; 2025 Custom Apparel Studio. All rights reserved.</p>
+            <p>&copy; 2025 aerorev. All rights reserved.</p>
           </div>
         </div>
       </footer>
