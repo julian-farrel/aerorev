@@ -9,68 +9,68 @@ import { SlidersHorizontal } from "lucide-react"
 const PRODUCTS = [
   {
     id: 1,
-    name: "Red Bull Racing Official Teamline Tee",
-    price: "Rp 850.000",
-    category: "F1 Series",
-    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1964&auto=format&fit=crop",
-    link: "https://shopee.co.id"
+    name: "AeroRev T-Shirt Michael Dunlop IOM White",
+    price: "Rp 75.000",
+    category: "Moto GP",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-8224q-mgdcbax9t91rdf.webp",
+    link: "https://shopee.co.id/AeroRev-T-Shirt-Michael-Dunlop-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.42872233943?extraParams=%7B%22display_model_id%22%3A276808705042%7D"
   },
   {
     id: 2,
-    name: "Ferrari Scuderia Corso Pilota Jacket",
-    price: "Rp 2.150.000",
-    category: "F1 Series",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1936&auto=format&fit=crop",
-    link: "https://tokopedia.com"
+    name: "AeroRev T-Shirt Ian Hutchingson IOM Black",
+    price: "Rp 90.000",
+    category: "Moto GP",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-82250-mgdcj4jfn2mh57.webp",
+    link: "https://shopee.co.id/AeroRev-T-Shirt-Ian-Hutchingson-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.29592406112?extraParams=%7B%22display_model_id%22%3A291808803216%7D"
   },
   {
     id: 3,
-    name: "Yamaha Monster Energy MotoGP Jersey",
-    price: "Rp 450.000",
+    name: "AeroRev T-Shirt Peter Hickman IOM White",
+    price: "Rp 75.000",
     category: "MotoGP",
-    image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=2127&auto=format&fit=crop",
-    link: "https://shopee.co.id"
+    image: "https://down-id.img.susercontent.com/file/id-11134207-8224r-mgdcodkf5kwb23.webp",
+    link: "https://shopee.co.id/AeroRev-T-Shirt-Peter-Hickman-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.41122238692?extraParams=%7B%22display_model_id%22%3A119574202839%7D"
   },
   {
     id: 4,
-    name: "Aerorev Street technical Hoodie",
-    price: "Rp 650.000",
-    category: "Streetwear",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop",
-    link: "https://shopee.co.id"
-  },
-  {
-    id: 5,
-    name: "VR46 Doctor Legacy Cap",
-    price: "Rp 350.000",
-    category: "Accesories",
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89d?q=80&w=2080&auto=format&fit=crop",
-    link: "https://tokopedia.com"
-  },
-  {
-    id: 6,
-    name: "McLaren Gulf Special Edition Polo",
-    price: "Rp 950.000",
-    category: "F1 Series",
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2015&auto=format&fit=crop",
-    link: "https://shopee.co.id"
-  },
-  {
-    id: 7,
-    name: "Ducati Lenovo Team Track Pants",
-    price: "Rp 750.000",
+    name: "AeroRev T-Shirt Michael Dunlop IOM Black",
+    price: "Rp 75.000",
     category: "MotoGP",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2020&auto=format&fit=crop",
-    link: "https://shopee.co.id"
+    image: "https://down-id.img.susercontent.com/file/id-11134207-8224v-mgdclm2v0vt737.webp",
+    link: "https://shopee.co.id/AeroRev-T-Shirt-Michael-Dunlop-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.42822246493?extraParams=%7B%22display_model_id%22%3A218733741043%7D"
   },
-  {
-    id: 8,
-    name: "AlphaTauri Minimalist Tee",
-    price: "Rp 550.000",
-    category: "F1 Series",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080&auto=format&fit=crop",
-    link: "https://tokopedia.com"
-  },
+  // {
+  //   id: 5,
+  //   name: "VR46 Doctor Legacy Cap",
+  //   price: "Rp 350.000",
+  //   category: "Accesories",
+  //   image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89d?q=80&w=2080&auto=format&fit=crop",
+  //   link: "https://tokopedia.com"
+  // },
+  // {
+  //   id: 6,
+  //   name: "McLaren Gulf Special Edition Polo",
+  //   price: "Rp 950.000",
+  //   category: "F1 Series",
+  //   image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2015&auto=format&fit=crop",
+  //   link: "https://shopee.co.id"
+  // },
+  // {
+  //   id: 7,
+  //   name: "Ducati Lenovo Team Track Pants",
+  //   price: "Rp 750.000",
+  //   category: "MotoGP",
+  //   image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2020&auto=format&fit=crop",
+  //   link: "https://shopee.co.id"
+  // },
+  // {
+  //   id: 8,
+  //   name: "AlphaTauri Minimalist Tee",
+  //   price: "Rp 550.000",
+  //   category: "F1 Series",
+  //   image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080&auto=format&fit=crop",
+  //   link: "https://tokopedia.com"
+  // },
 ]
 
 export default function Shop() {
@@ -108,17 +108,6 @@ export default function Shop() {
                   <li className="hover:text-foreground cursor-pointer transition-colors">Streetwear</li>
                   <li className="hover:text-foreground cursor-pointer transition-colors">Accessories</li>
                 </ul>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="font-bold uppercase text-sm tracking-wider border-b pb-2">Size</h3>
-                <div className="grid grid-cols-3 gap-2">
-                  {['S', 'M', 'L', 'XL', '2XL'].map(size => (
-                    <button key={size} className="border border-border rounded px-2 py-1 text-sm hover:border-primary hover:text-primary transition-colors">
-                      {size}
-                    </button>
-                  ))}
-                </div>
               </div>
             </aside>
 

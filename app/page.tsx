@@ -17,7 +17,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background z-10" />
             <img
-              src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1683455426019-0eb3f4236368?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Racing Background"
               className="w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow"
             />

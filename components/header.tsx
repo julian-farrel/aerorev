@@ -29,19 +29,12 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
-              Agency
+              Home
             </Link>
             <Link href="/shop" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
               Shop
             </Link>
           </nav>
-
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/shop" className="relative p-2 text-white hover:text-primary transition-colors">
-              <ShoppingBag size={24} />
-              <span className="absolute top-0 right-0 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white hover:text-primary transition-colors" aria-label="Toggle menu">
@@ -53,7 +46,7 @@ export function Header() {
         {isOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-3 border-t border-white/10 pt-4 bg-black">
             <Link href="/" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
-              Agency
+              Home
             </Link>
             <Link href="/shop" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
               Shop
