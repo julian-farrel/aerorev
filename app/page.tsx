@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="bg-background text-foreground min-h-screen selection:bg-primary selection:text-white">
+      <main className="bg-background text-foreground min-h-screen selection:bg-blue-600 selection:text-white">
 
         {/* Full Screen Hero Section */}
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
@@ -26,20 +26,20 @@ export default function Home() {
           <div className="relative z-20 text-center px-4 max-w-5xl mx-auto space-y-8">
             <ScrollAnimation animation="slideDown">
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase text-white drop-shadow-2xl">
-                AERO<span className="text-primary italic">REV</span>
+                AERO<span className="bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent italic pr-4">REV</span>
               </h1>
             </ScrollAnimation>
 
             <ScrollAnimation animation="fadeIn" delay={200}>
               <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-3xl mx-auto">
                 WEAR YOUR PASSION. RIDE WITH STYLE. <br />
-                <span className="text-primary font-bold">PREMIUM CUSTOM APPAREL & PRINTING</span>
+                <span className="text-white font-bold">PREMIUM CUSTOM APPAREL & PRINTING</span>
               </p>
             </ScrollAnimation>
 
             <ScrollAnimation animation="slideUp" delay={400}>
               <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                <Link href="#services" className="group relative px-8 py-4 bg-primary text-white font-bold text-lg uppercase tracking-wider overflow-hidden hover:bg-red-700 transition-all clip-path-slant">
+                <Link href="#services" className="group relative px-8 py-4 bg-primary text-black font-bold text-lg uppercase tracking-wider overflow-hidden hover:bg-gray-200 transition-all clip-path-slant">
                   <span className="relative z-10 flex items-center gap-2">
                     Our Services <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -58,17 +58,32 @@ export default function Home() {
               <div className="h-1 w-4 bg-white/50"></div>
               <div className="h-1 w-2 bg-white/30"></div>
             </div>
-            <p className="text-xs text-white/40 mt-2 font-mono">EST. 2014 // JAKARTA, ID</p>
+            <p className="text-xs text-white/40 mt-2 font-mono">EST. 2025 // JAKARTA, ID</p>
           </div>
         </section>
 
         {/* Brand Running Text (Marquee) */}
-        <div className="bg-primary/10 border-y border-white/5 py-4 overflow-hidden">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap text-white/20 font-black text-4xl uppercase items-center">
-            <span>MOTOGP</span> • <span>F1 RACING</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span> •
-            <span>MOTOGP</span> • <span>F1 RACING</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span>
+        <div className="bg-white/5 border-y border-white/10 py-4 overflow-hidden">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap text-white/40 font-black text-4xl uppercase items-center">
+            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM JERSEY</span> • <span>CLOTHING</span> • <span>STREETWEAR</span> •
+            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span>
           </div>
         </div>
+
+        {/* Our Partners Section */}
+        <section className="py-20 bg-black border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <h3 className="text-white/60 text-sm font-bold uppercase tracking-[0.2rem] mb-12">Our Partners</h3>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70">
+              {/* Placeholders for Partners - Using Text for V1 to ensure visual consistency without external assets */}
+              <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">JAPS RIDER</span>
+              <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">CUAN HELMET</span>
+              {/* <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">DUCATI CORSE</span>
+              <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">KTM FACTORY</span>
+              <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">APRILIA</span> */}
+            </div>
+          </div>
+        </section>
 
         {/* Services Section */}
         <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -108,7 +123,7 @@ export default function Home() {
 
         {/* About / Context Section */}
         <section className="relative py-32 bg-zinc-950 overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollAnimation animation="slideRight">
@@ -151,18 +166,18 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-primary text-white text-center relative overflow-hidden">
+        <section className="py-24 bg-primary text-black text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 Mix-blend-overlay"></div>
           <div className="relative z-10 max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6">Start Your Engine</h2>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 font-light">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 text-black">Start Your Engine</h2>
+            <p className="text-xl md:text-2xl text-black/80 mb-10 font-light">
               Ready to create your custom team kit or grab some fresh gear?
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-white text-primary px-10 py-4 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors shadow-lg clip-path-slant">
+              <button className="bg-black text-white px-10 py-4 font-black uppercase text-lg hover:bg-zinc-800 transition-colors shadow-lg clip-path-slant">
                 Start Custom Order
               </button>
-              <Link href="/shop" className="bg-black/80 text-white border border-white/20 px-10 py-4 font-black uppercase text-lg hover:bg-white hover:text-primary transition-colors shadow-lg clip-path-slant">
+              <Link href="/shop" className="bg-white/90 text-black border-2 border-black px-10 py-4 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors shadow-lg clip-path-slant">
                 Visit Shop
               </Link>
             </div>

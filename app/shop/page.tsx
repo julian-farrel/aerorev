@@ -1,17 +1,17 @@
 "use client"
 
+import { useState } from "react"
 import { ProductCard } from "@/components/product-card"
 import { Header } from "@/components/header"
 import { ScrollAnimation } from "@/components/scroll-animation"
 import { SlidersHorizontal } from "lucide-react"
 
-// Mock Data
 const PRODUCTS = [
   {
     id: 1,
     name: "AeroRev T-Shirt Michael Dunlop IOM White",
     price: "Rp 75.000",
-    category: "Moto GP",
+    category: "MotoGP",
     image: "https://down-id.img.susercontent.com/file/id-11134207-8224q-mgdcbax9t91rdf.webp",
     link: "https://shopee.co.id/AeroRev-T-Shirt-Michael-Dunlop-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.42872233943?extraParams=%7B%22display_model_id%22%3A276808705042%7D"
   },
@@ -19,7 +19,7 @@ const PRODUCTS = [
     id: 2,
     name: "AeroRev T-Shirt Ian Hutchingson IOM Black",
     price: "Rp 90.000",
-    category: "Moto GP",
+    category: "MotoGP",
     image: "https://down-id.img.susercontent.com/file/id-11134207-82250-mgdcj4jfn2mh57.webp",
     link: "https://shopee.co.id/AeroRev-T-Shirt-Ian-Hutchingson-IOM-White-%E2%80%93-Kaos-Motor-Unisex-S1000RR-Soft-24s-i.298428492.29592406112?extraParams=%7B%22display_model_id%22%3A291808803216%7D"
   },
@@ -43,7 +43,7 @@ const PRODUCTS = [
   //   id: 5,
   //   name: "VR46 Doctor Legacy Cap",
   //   price: "Rp 350.000",
-  //   category: "Accesories",
+  //   category: "Accessories",
   //   image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89d?q=80&w=2080&auto=format&fit=crop",
   //   link: "https://tokopedia.com"
   // },
@@ -74,6 +74,14 @@ const PRODUCTS = [
 ]
 
 export default function Shop() {
+  const [activeCategory, setActiveCategory] = useState("All Products")
+
+  const filteredProducts = activeCategory === "All Products"
+    ? PRODUCTS
+    : PRODUCTS.filter((product) => product.category === activeCategory)
+
+  const categories = ["All Products", "MotoGP", "F1 Series"]
+
   return (
     <>
       <Header />
@@ -83,8 +91,8 @@ export default function Shop() {
         <section className="bg-zinc-100 dark:bg-zinc-900 border-b border-border py-12 md:py-20">
           <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
             <ScrollAnimation animation="slideDown">
-              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-primary">
-                Race Ready Gear
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight bg-gradient-to-br from-black to-stone-500 bg-clip-text text-transparent">
+                Choose your Apparel
               </h1>
             </ScrollAnimation>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -102,18 +110,25 @@ export default function Shop() {
               <div className="space-y-4">
                 <h3 className="font-bold uppercase text-sm tracking-wider border-b pb-2">Collections</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="text-primary font-bold cursor-pointer">All Products</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">F1 Series</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">MotoGP</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Streetwear</li>
-                  <li className="hover:text-foreground cursor-pointer transition-colors">Accessories</li>
+                  {categories.map((category) => (
+                    <li
+                      key={category}
+                      onClick={() => setActiveCategory(category)}
+                      className={`cursor-pointer transition-colors ${activeCategory === category
+                        ? "text-primary font-bold"
+                        : "hover:text-foreground"
+                        }`}
+                    >
+                      {category}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </aside>
 
             {/* Mobile Filter Toggle */}
             <div className="lg:hidden flex justify-between items-center border-b border-border pb-4">
-              <span className="font-bold">{PRODUCTS.length} Products</span>
+              <span className="font-bold">{filteredProducts.length} Products</span>
               <button className="flex items-center gap-2 text-sm font-bold uppercase border border-border px-4 py-2 rounded">
                 <SlidersHorizontal size={16} /> Filters
               </button>
@@ -121,11 +136,16 @@ export default function Shop() {
 
             {/* Product Grid */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
-              {PRODUCTS.map((product, idx) => (
+              {filteredProducts.map((product, idx) => (
                 <ScrollAnimation key={product.id} animation="fadeIn" delay={idx * 50}>
                   <ProductCard product={product} />
                 </ScrollAnimation>
               ))}
+              {filteredProducts.length === 0 && (
+                <div className="col-span-full text-center py-20 text-muted-foreground">
+                  No products found in this category.
+                </div>
+              )}
             </div>
 
           </div>
