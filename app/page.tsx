@@ -2,211 +2,191 @@
 
 import { Header } from "@/components/header"
 import { ScrollAnimation } from "@/components/scroll-animation"
-// 1. Import the Montserrat font
-import { Montserrat } from "next/font/google"
-
-// 2. Configure the font (loading the ExtraBold weight '800')
-const montserrat = Montserrat({ 
-  subsets: ["latin"], 
-  weight: "800" 
-})
+import { ArrowRight, Printer, Palette, ShieldCheck, Car } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="bg-background text-foreground">
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <ScrollAnimation animation="fadeIn">
-            <div className="text-center space-y-6">
-              {/* 3. Applied Montserrat ExtraBold (800) */}
-              <h1 className={`${montserrat.className} text-5xl md:text-6xl font-extrabold text-balance leading-tight`}>
-                Your Custom Apparel, Crafted with Care
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-                Premium custom apparel design and manufacturing for individuals and businesses
-              </p>
-            </div>
-          </ScrollAnimation>
-        </section>
+      <main className="bg-background text-foreground min-h-screen selection:bg-primary selection:text-white">
 
-        {/* About Us Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <ScrollAnimation animation="slideRight" delay={0}>
-              <div>
-                {/* Updated to Montserrat ExtraBold */}
-                <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>About Us</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  We are a passionate team dedicated to bringing your apparel vision to life. With over a decade of
-                  experience in custom design and manufacturing, we take pride in creating premium quality garments that
-                  tell your story.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Every piece we create is a reflection of your unique style and personality. From concept to final
-                  product, we ensure meticulous attention to detail at every step.
-                </p>
-              </div>
+        {/* Full Screen Hero Section */}
+        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background z-10" />
+            <img
+              src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop"
+              alt="Racing Background"
+              className="w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow"
+            />
+          </div>
+
+          <div className="relative z-20 text-center px-4 max-w-5xl mx-auto space-y-8">
+            <ScrollAnimation animation="slideDown">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase text-white drop-shadow-2xl">
+                AERO<span className="text-primary italic">REV</span>
+              </h1>
             </ScrollAnimation>
-            <ScrollAnimation animation="slideLeft" delay={100}>
-              <div className="bg-card rounded-lg aspect-square flex items-center justify-center border border-border">
-                <img
-                  src="/custom-apparel-studio-showcase.jpg"
-                  alt="Custom apparel showcase"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+
+            <ScrollAnimation animation="fadeIn" delay={200}>
+              <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-3xl mx-auto">
+                WEAR YOUR PASSION. RIDE WITH STYLE. <br />
+                <span className="text-primary font-bold">PREMIUM CUSTOM APPAREL & PRINTING</span>
+              </p>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="slideUp" delay={400}>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                <Link href="#services" className="group relative px-8 py-4 bg-primary text-white font-bold text-lg uppercase tracking-wider overflow-hidden hover:bg-red-700 transition-all clip-path-slant">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Our Services <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+                <Link href="/shop" className="group px-8 py-4 border-2 border-white/20 hover:border-primary text-white font-bold text-lg uppercase tracking-wider hover:bg-white/5 transition-all clip-path-slant">
+                  Shop Apparel
+                </Link>
               </div>
             </ScrollAnimation>
           </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute bottom-10 left-10 z-20 hidden md:block">
+            <div className="flex gap-4">
+              <div className="h-1 w-12 bg-primary"></div>
+              <div className="h-1 w-4 bg-white/50"></div>
+              <div className="h-1 w-2 bg-white/30"></div>
+            </div>
+            <p className="text-xs text-white/40 mt-2 font-mono">EST. 2014 // JAKARTA, ID</p>
+          </div>
         </section>
 
-        {/* Service Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
+        {/* Brand Running Text (Marquee) */}
+        <div className="bg-primary/10 border-y border-white/5 py-4 overflow-hidden">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap text-white/20 font-black text-4xl uppercase items-center">
+            <span>MOTOGP</span> • <span>F1 RACING</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span> •
+            <span>MOTOGP</span> • <span>F1 RACING</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span>
+          </div>
+        </div>
+
+        {/* Services Section */}
+        <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <ScrollAnimation animation="slideUp">
-            <div className="text-center mb-12">
-              {/* Updated to Montserrat ExtraBold */}
-              <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-4`}>Our Services</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Custom design, printing, embroidery, and more
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+              <div>
+                <h2 className="text-primary text-lg font-bold tracking-widest uppercase mb-2">What We Do</h2>
+                <h3 className="text-4xl md:text-5xl font-black text-white uppercase">High Performance <br /> Printing Solutions.</h3>
+              </div>
+              <p className="text-gray-400 max-w-md text-right md:text-left">
+                We combine cutting-edge technology with artisanal craftsmanship to deliver race-ready apparel.
               </p>
             </div>
           </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Custom Design",
-                description: "Work with our designers to create unique apparel designs tailored to your vision",
-              },
-              {
-                title: "Screen Printing",
-                description: "High-quality screen printing with vibrant colors and durability",
-              },
-              { title: "Embroidery", description: "Professional embroidery services for logos and detailed designs" },
-            ].map((service, idx) => (
-              <ScrollAnimation key={idx} animation="slideUp" delay={idx * 100}>
-                <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                </div>
-              </ScrollAnimation>
-            ))}
+            <ServiceCard
+              icon={<Printer className="w-10 h-10" />}
+              title="Screen Printing"
+              desc="Durable, vibrant plastisol and rubber prints designed to last through every lap."
+              delay={0}
+            />
+            <ServiceCard
+              icon={<Palette className="w-10 h-10" />}
+              title="Full Sublimation"
+              desc="Unlimited colors and complex patterns fused directly into the fabric for zero breathability loss."
+              delay={100}
+            />
+            <ServiceCard
+              icon={<ShieldCheck className="w-10 h-10" />}
+              title="Premium Fabrics"
+              desc="Sourced materials that prioritize comfort, sweat-wicking, and durability."
+              delay={200}
+            />
           </div>
         </section>
 
-        {/* Apparel Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
-          <ScrollAnimation animation="slideUp">
-            <div className="text-center mb-12">
-              {/* Updated to Montserrat ExtraBold */}
-              <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-4`}>Our Apparel</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore our collection of premium quality garments
-              </p>
-            </div>
-          </ScrollAnimation>
+        {/* About / Context Section */}
+        <section className="relative py-32 bg-zinc-950 overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <ScrollAnimation key={item} animation="slideUp" delay={item * 75}>
-                <div className="space-y-4">
-                  <div className="bg-card rounded-lg aspect-square flex items-center justify-center border border-border overflow-hidden">
-                    <img
-                      src={`/custom-tshirt-design-.jpg?height=300&width=300&query=custom+tshirt+design+${item}`}
-                      alt={`Apparel item ${item}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Premium T-Shirt {item}</h3>
-                    <p className="text-muted-foreground text-sm">$29.99</p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollAnimation animation="slideRight">
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-3xl opacity-50" />
+                <div className="relative z-10 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2070&auto=format&fit=crop"
+                    alt="Workshop Interior"
+                    className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <p className="text-white font-bold text-xl">THE WORKSHOP</p>
+                    <p className="text-primary font-mono text-sm">SINCE 2014</p>
                   </div>
                 </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </section>
-
-        {/* Location Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <ScrollAnimation animation="slideLeft" delay={0}>
-              <div>
-                {/* Updated to Montserrat ExtraBold */}
-                <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>Visit Us</h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Location</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      123 Design Street
-                      <br />
-                      Creative City, CC 12345
-                      <br />
-                      United States
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Hours</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Monday - Friday: 10:00 AM - 6:00 PM
-                      <br />
-                      Saturday: 11:00 AM - 5:00 PM
-                      <br />
-                      Sunday: Closed
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Contact</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Phone: (555) 123-4567
-                      <br />
-                      Email: info@customapparel.com
-                    </p>
-                  </div>
-                </div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-3xl opacity-50" />
               </div>
             </ScrollAnimation>
-            <ScrollAnimation animation="slideRight" delay={100}>
-              <div className="bg-card rounded-lg aspect-square flex items-center justify-center border border-border">
-                <img
-                  src="/studio-location-map.jpg"
-                  alt="Studio location map"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+
+            <ScrollAnimation animation="slideLeft">
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight">
+                  Crafting Identity <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">For Champions.</span>
+                </h2>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  At Aerorev, we understand that a jersey isn't just clothing; it's your team's flag, your sponsor's billboard, and your personal armor.
+                </p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  Specializing in automotive and racing apparel, we bring the precision of the pit lane to our printing press. Whether you need a single custom piece or bulk team orders, we deliver podium-finish quality.
+                </p>
+                <Link href="/shop" className="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase hover:text-white transition-colors mt-4">
+                  Explore Our Shop <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </ScrollAnimation>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border text-center">
-          <ScrollAnimation animation="slideUp">
-            {/* Updated to Montserrat ExtraBold */}
-            <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold mb-6`}>Ready to Create Something Amazing?</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Start your custom apparel journey today
+        <section className="py-24 bg-primary text-white text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 Mix-blend-overlay"></div>
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6">Start Your Engine</h2>
+            <p className="text-xl md:text-2xl text-white/90 mb-10 font-light">
+              Ready to create your custom team kit or grab some fresh gear?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-foreground text-background px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                Get Started
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <button className="bg-white text-primary px-10 py-4 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors shadow-lg clip-path-slant">
+                Start Custom Order
               </button>
-              <button className="border border-foreground text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-foreground hover:text-background transition-colors">
-                Learn More
-              </button>
+              <Link href="/shop" className="bg-black/80 text-white border border-white/20 px-10 py-4 font-black uppercase text-lg hover:bg-white hover:text-primary transition-colors shadow-lg clip-path-slant">
+                Visit Shop
+              </Link>
             </div>
-          </ScrollAnimation>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-muted-foreground">
-            <p>&copy; 2025 aerorev. All rights reserved.</p>
           </div>
-        </div>
-      </footer>
+        </section>
+
+      </main>
     </>
+  )
+}
+
+function ServiceCard({ icon, title, desc, delay }: { icon: React.ReactNode, title: string, desc: string, delay: number }) {
+  return (
+    <ScrollAnimation animation="slideUp" delay={delay}>
+      <div className="bg-card border border-white/5 p-8 h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+          <Car className="w-24 h-24 text-white" />
+        </div>
+        <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+          {icon}
+        </div>
+        <h3 className="text-2xl font-bold text-white uppercase mb-4">{title}</h3>
+        <p className="text-gray-400 leading-relaxed">{desc}</p>
+      </div>
+    </ScrollAnimation>
   )
 }

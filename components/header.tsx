@@ -3,71 +3,60 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
-// 1. Import Montserrat
-import { Montserrat } from "next/font/google"
-
-// 2. Configure for ExtraBold (weight 800)
-const montserrat = Montserrat({ 
-  subsets: ["latin"], 
-  weight: "800" 
-})
+import { Menu, X, ShoppingBag } from "lucide-react"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
 
-          <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight">
-            <Image 
-              src="/aerorev.jpg" 
-              alt="Aerorev Logo" 
-              width={32} 
-              height={32} 
-              className="rounded-md object-cover"
-            />
-            {/* 3. Apply ExtraBold font class */}
-            <span className={montserrat.className}>aerorev</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-white/20 group-hover:border-primary transition-colors">
+              <Image
+                src="/aerorev.jpg"
+                alt="Aerorev Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span className="text-2xl font-black text-white tracking-tighter uppercase font-heading group-hover:text-primary transition-colors">
+              AERO<span className="italic text-primary">REV</span>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium hover:text-accent transition-colors">
-              Home
+            <Link href="/" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+              Agency
             </Link>
-            <Link href="/service" className="text-sm font-medium hover:text-accent transition-colors">
-              Service
-            </Link>
-            <Link href="/shop" className="text-sm font-medium hover:text-accent transition-colors">
+            <Link href="/shop" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
               Shop
-            </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-accent transition-colors">
-              About Us
             </Link>
           </nav>
 
+          <div className="hidden md:flex items-center gap-4">
+            <Link href="/shop" className="relative p-2 text-white hover:text-primary transition-colors">
+              <ShoppingBag size={24} />
+              <span className="absolute top-0 right-0 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2" aria-label="Toggle menu">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white hover:text-primary transition-colors" aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-3 border-t border-border pt-4">
-            <Link href="/" className="text-sm font-medium hover:text-accent transition-colors block py-2">
-              Home
+          <nav className="md:hidden pb-4 flex flex-col gap-3 border-t border-white/10 pt-4 bg-black">
+            <Link href="/" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
+              Agency
             </Link>
-            <Link href="/service" className="text-sm font-medium hover:text-accent transition-colors block py-2">
-              Service
-            </Link>
-            <Link href="/shop" className="text-sm font-medium hover:text-accent transition-colors block py-2">
+            <Link href="/shop" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
               Shop
-            </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-accent transition-colors block py-2">
-              About Us
             </Link>
           </nav>
         )}

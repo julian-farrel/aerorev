@@ -1,14 +1,147 @@
+"use client"
+
+import { ProductCard } from "@/components/product-card"
 import { Header } from "@/components/header"
+import { ScrollAnimation } from "@/components/scroll-animation"
+import { SlidersHorizontal } from "lucide-react"
+
+// Mock Data
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "Red Bull Racing Official Teamline Tee",
+    price: "Rp 850.000",
+    category: "F1 Series",
+    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1964&auto=format&fit=crop",
+    link: "https://shopee.co.id"
+  },
+  {
+    id: 2,
+    name: "Ferrari Scuderia Corso Pilota Jacket",
+    price: "Rp 2.150.000",
+    category: "F1 Series",
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1936&auto=format&fit=crop",
+    link: "https://tokopedia.com"
+  },
+  {
+    id: 3,
+    name: "Yamaha Monster Energy MotoGP Jersey",
+    price: "Rp 450.000",
+    category: "MotoGP",
+    image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=2127&auto=format&fit=crop",
+    link: "https://shopee.co.id"
+  },
+  {
+    id: 4,
+    name: "Aerorev Street technical Hoodie",
+    price: "Rp 650.000",
+    category: "Streetwear",
+    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop",
+    link: "https://shopee.co.id"
+  },
+  {
+    id: 5,
+    name: "VR46 Doctor Legacy Cap",
+    price: "Rp 350.000",
+    category: "Accesories",
+    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89d?q=80&w=2080&auto=format&fit=crop",
+    link: "https://tokopedia.com"
+  },
+  {
+    id: 6,
+    name: "McLaren Gulf Special Edition Polo",
+    price: "Rp 950.000",
+    category: "F1 Series",
+    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2015&auto=format&fit=crop",
+    link: "https://shopee.co.id"
+  },
+  {
+    id: 7,
+    name: "Ducati Lenovo Team Track Pants",
+    price: "Rp 750.000",
+    category: "MotoGP",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2020&auto=format&fit=crop",
+    link: "https://shopee.co.id"
+  },
+  {
+    id: 8,
+    name: "AlphaTauri Minimalist Tee",
+    price: "Rp 550.000",
+    category: "F1 Series",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080&auto=format&fit=crop",
+    link: "https://tokopedia.com"
+  },
+]
 
 export default function Shop() {
   return (
     <>
       <Header />
-      <main className="bg-background text-foreground min-h-screen pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h1 className="text-5xl font-serif font-bold mb-6">Shop Page</h1>
-          <p className="text-lg text-muted-foreground">Shop catalog coming soon...</p>
+      <main className="bg-background min-h-screen text-foreground">
+
+        {/* Shop Header */}
+        <section className="bg-zinc-100 dark:bg-zinc-900 border-b border-border py-12 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <ScrollAnimation animation="slideDown">
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-primary">
+                Race Ready Gear
+              </h1>
+            </ScrollAnimation>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Official Aerorev merchandise and curated racing apparel.
+            </p>
+          </div>
+        </section>
+
+        {/* Filters & Grid */}
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="flex flex-col lg:flex-row gap-8">
+
+            {/* Sidebar Filters (Hidden on mobile for simplicity in V1, normally use Vaul drawer) */}
+            <aside className="hidden lg:block w-64 space-y-8 h-fit sticky top-24">
+              <div className="space-y-4">
+                <h3 className="font-bold uppercase text-sm tracking-wider border-b pb-2">Collections</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="text-primary font-bold cursor-pointer">All Products</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">F1 Series</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">MotoGP</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Streetwear</li>
+                  <li className="hover:text-foreground cursor-pointer transition-colors">Accessories</li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-bold uppercase text-sm tracking-wider border-b pb-2">Size</h3>
+                <div className="grid grid-cols-3 gap-2">
+                  {['S', 'M', 'L', 'XL', '2XL'].map(size => (
+                    <button key={size} className="border border-border rounded px-2 py-1 text-sm hover:border-primary hover:text-primary transition-colors">
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            {/* Mobile Filter Toggle */}
+            <div className="lg:hidden flex justify-between items-center border-b border-border pb-4">
+              <span className="font-bold">{PRODUCTS.length} Products</span>
+              <button className="flex items-center gap-2 text-sm font-bold uppercase border border-border px-4 py-2 rounded">
+                <SlidersHorizontal size={16} /> Filters
+              </button>
+            </div>
+
+            {/* Product Grid */}
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+              {PRODUCTS.map((product, idx) => (
+                <ScrollAnimation key={product.id} animation="fadeIn" delay={idx * 50}>
+                  <ProductCard product={product} />
+                </ScrollAnimation>
+              ))}
+            </div>
+
+          </div>
         </div>
+
       </main>
     </>
   )
