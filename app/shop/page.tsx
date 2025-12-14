@@ -4,7 +4,17 @@ import { useState } from "react"
 import { ProductCard } from "@/components/product-card"
 import { Header } from "@/components/header"
 import { ScrollAnimation } from "@/components/scroll-animation"
-import { SlidersHorizontal } from "lucide-react"
+import { SlidersHorizontal, X, ExternalLink } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog"
+
 
 const PRODUCTS = [
   {
@@ -88,14 +98,24 @@ export default function Shop() {
       <main className="bg-background min-h-screen text-foreground">
 
         {/* Shop Header */}
-        <section className="bg-zinc-100 dark:bg-zinc-900 border-b border-border py-12 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
+        <section className="relative bg-zinc-950 border-b border-border py-24 md:py-32 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0 opacity-40">
+            <img
+              src="https://images.unsplash.com/photo-1753563819450-ad2b89f02ccd?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Shop Background"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
             <ScrollAnimation animation="slideDown">
-              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight bg-gradient-to-br from-black to-stone-500 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white drop-shadow-2xl">
                 Choose your Apparel
               </h1>
             </ScrollAnimation>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            <p className="text-gray-300 max-w-2xl mx-auto text-lg drop-shadow-md font-medium">
               Official Aerorev merchandise and curated racing apparel.
             </p>
           </div>
@@ -105,7 +125,7 @@ export default function Shop() {
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="flex flex-col lg:flex-row gap-8">
 
-            {/* Sidebar Filters (Hidden on mobile for simplicity in V1, normally use Vaul drawer) */}
+            {/* Sidebar Filters */}
             <aside className="hidden lg:block w-64 space-y-8 h-fit sticky top-24">
               <div className="space-y-4">
                 <h3 className="font-bold uppercase text-sm tracking-wider border-b pb-2">Collections</h3>
@@ -136,10 +156,46 @@ export default function Shop() {
 
             {/* Product Grid */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
-              {filteredProducts.map((product, idx) => (
-                <ScrollAnimation key={product.id} animation="fadeIn" delay={idx * 50}>
-                  <ProductCard product={product} />
-                </ScrollAnimation>
+              {filteredProducts.map((product) => (
+                <Dialog key={product.id}>
+                  <DialogTrigger asChild>
+                    <div className="h-full">
+                      <ProductCard product={product} />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent showCloseButton={false} className="max-w-[95vw] w-[95vw] h-[90vh] md:max-w-[85vw] md:h-[85vh] p-0 overflow-hidden bg-card border-white/10">
+                    <DialogClose className="absolute right-6 top-6 z-50 rounded-full bg-black/50 p-2 text-white hover:bg-white hover:text-black transition-colors backdrop-blur-sm">
+                      <X size={24} />
+                    </DialogClose>
+                    <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+                      <div className="relative w-full h-1/2 md:h-full bg-white/5 p-8 flex items-center justify-center">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain max-h-[70vh]" />
+                      </div>
+                      <div className="relative p-8 md:p-12 space-y-8 flex flex-col justify-center h-full overflow-y-auto">
+                        <DialogHeader>
+                          <span className="text-primary font-bold text-sm uppercase tracking-wider text-left">{product.category}</span>
+                          <DialogTitle className="text-4xl md:text-5xl font-black text-white mt-2 leading-tight text-left">{product.name}</DialogTitle>
+                          <DialogDescription className="text-2xl text-muted-foreground font-mono mt-4 text-left">{product.price}</DialogDescription>
+                        </DialogHeader>
+                        <div className="space-y-8">
+                          <p className="text-gray-400 text-lg leading-relaxed">
+                            Official Aerorev merchandise. Crafted for performance and style. <br />
+                            High-quality materials designed for racing enthusiasts who demand the best.
+                            Limited stock available.
+                          </p>
+                          <a
+                            href={product.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-6 bg-primary text-black font-black uppercase tracking-widest text-xl text-center hover:bg-white transition-colors rounded-lg flex items-center justify-center gap-3 shadow-lg hover:scale-[1.02] transform duration-200"
+                          >
+                            Buy Now <ExternalLink size={24} />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               ))}
               {filteredProducts.length === 0 && (
                 <div className="col-span-full text-center py-20 text-muted-foreground">

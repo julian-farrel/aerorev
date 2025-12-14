@@ -13,9 +13,12 @@ interface ProductProps {
     link: string
 }
 
-export function ProductCard({ product }: { product: ProductProps }) {
+export function ProductCard({ product, onClick }: { product: ProductProps, onClick?: () => void }) {
     return (
-        <div className="group relative flex flex-col gap-3">
+        <div
+            className="group relative flex flex-col gap-3 cursor-pointer"
+            onClick={onClick}
+        >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-zinc-900 border border-transparent hover:border-primary/20 transition-all">
                 {/* Product Image */}
                 <div className="relative w-full h-full p-6 flex items-center justify-center bg-gray-50 dark:bg-zinc-900/50">
@@ -28,13 +31,11 @@ export function ProductCard({ product }: { product: ProductProps }) {
 
                 {/* Action Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none group-hover:pointer-events-auto">
-                    <Link
-                        href={product.link}
-                        target="_blank"
+                    <button
                         className="flex items-center justify-center gap-2 w-full py-3 bg-black dark:bg-white text-white dark:text-black font-bold uppercase tracking-wider rounded-lg shadow-lg hover:opacity-90 transition-opacity"
                     >
-                        Buy Now <ExternalLink size={16} />
-                    </Link>
+                        View Details <ExternalLink size={16} />
+                    </button>
                 </div>
 
                 {/* Badge */}

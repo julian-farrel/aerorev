@@ -34,6 +34,9 @@ export function Header() {
             <Link href="/shop" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
               Shop
             </Link>
+            <Link href="/portfolio" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+              Portofolio
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -50,6 +53,9 @@ export function Header() {
             </Link>
             <Link href="/shop" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
               Shop
+            </Link>
+            <Link href="/portfolio" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
+              Portofolio
             </Link>
           </nav>
         )}

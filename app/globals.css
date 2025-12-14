@@ -155,3 +155,19 @@
 .slide-down.animate { animation: slideDown 0.8s ease-out forwards; }
 .slide-left.animate { animation: slideLeft 0.8s ease-out forwards; }
 .slide-right.animate { animation: slideRight 0.8s ease-out forwards; }
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

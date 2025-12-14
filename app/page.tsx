@@ -13,11 +13,10 @@ export default function Home() {
 
         {/* Full Screen Hero Section */}
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-          {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background z-10" />
             <img
-              src="https://images.unsplash.com/photo-1683455426019-0eb3f4236368?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1683455426019-0eb3f4236368?q=80&w=1170&auto=format&fit=crop"
               alt="Racing Background"
               className="w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow"
             />
@@ -65,19 +64,21 @@ export default function Home() {
         {/* Brand Running Text (Marquee) */}
         <div className="bg-white/5 border-y border-white/10 py-4 overflow-hidden">
           <div className="flex gap-12 animate-marquee whitespace-nowrap text-white/40 font-black text-4xl uppercase items-center">
-            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM JERSEY</span> • <span>CLOTHING</span> • <span>STREETWEAR</span> •
-            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM JERSEY</span> • <span>SUBLIMATION</span> • <span>STREETWEAR</span>
+            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM</span> • <span>CLOTHING</span> • <span>RIDING</span> •
+            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM</span> • <span>CLOTHING</span> • <span>RIDING</span> •
+            <span>MOTOGP</span> • <span>APPAREL</span> • <span>CUSTOM</span> • <span>CLOTHING</span> • <span>RIDING</span>
           </div>
         </div>
 
         {/* Our Partners Section */}
         <section className="py-20 bg-black border-b border-white/10">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h3 className="text-white/60 text-sm font-bold uppercase tracking-[0.2rem] mb-12">Our Partners</h3>
+            <h3 className="text-white/60 text-sm font-bold uppercase tracking-[0.2rem] mb-12">Our Clients</h3>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70">
               {/* Placeholders for Partners - Using Text for V1 to ensure visual consistency without external assets */}
               <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">JAPS RIDER</span>
               <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">CUAN HELMET</span>
+              <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">JAPS RACING</span>
               {/* <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">DUCATI CORSE</span>
               <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">KTM FACTORY</span>
               <span className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter hover:text-primary transition-colors cursor-default">APRILIA</span> */}
@@ -131,14 +132,14 @@ export default function Home() {
                 <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-3xl opacity-50" />
                 <div className="relative z-10 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2070&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=2070&auto=format&fit=crop"
                     alt="Workshop Interior"
                     className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-6 left-6">
                     <p className="text-white font-bold text-xl">THE WORKSHOP</p>
-                    <p className="text-primary font-mono text-sm">SINCE 2014</p>
+                    <p className="text-primary font-mono text-sm">SINCE 2025</p>
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-3xl opacity-50" />
@@ -184,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-      </main>
+      </main >
     </>
   )
 }
