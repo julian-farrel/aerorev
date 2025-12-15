@@ -116,7 +116,7 @@ export default function Shop() {
               </h1>
             </ScrollAnimation>
             <p className="text-gray-300 max-w-2xl mx-auto text-lg drop-shadow-md font-medium">
-              Official Aerorev merchandise and curated racing apparel.
+              Official Aerorev merchandise and apparel.
             </p>
           </div>
         </section>

@@ -64,7 +64,7 @@ export default function Portfolio() {
                     <ScrollAnimation animation="fadeIn" delay={200}>
                         <div className="h-1 w-24 bg-primary mx-auto mb-8" />
                         <p className="text-gray-400 font-mono tracking-widest text-sm uppercase">
-                            Curated Collection of Our Best Works
+                            Collection of Our Best Works
                         </p>
                     </ScrollAnimation>
                 </section>

@@ -32,7 +32,7 @@ export default function Home() {
             <ScrollAnimation animation="fadeIn" delay={200}>
               <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide max-w-3xl mx-auto">
                 WEAR YOUR PASSION. RIDE WITH STYLE. <br />
-                <span className="text-white font-bold">PREMIUM CUSTOM APPAREL & PRINTING</span>
+                <span className="text-white font-bold">PREMIUM CUSTOM CLOTHING & APPAREL</span>
               </p>
             </ScrollAnimation>
 
@@ -95,7 +95,7 @@ export default function Home() {
                 <h3 className="text-4xl md:text-5xl font-black text-white uppercase">High Performance <br /> Printing Solutions.</h3>
               </div>
               <p className="text-gray-400 max-w-md text-right md:text-left">
-                We combine cutting-edge technology with artisanal craftsmanship to deliver race-ready apparel.
+                "Kami memadukan teknologi cetak terdepan dengan keahlian artisan untuk menghadirkan pakaian custom yang tangguh dan detail."
               </p>
             </div>
           </ScrollAnimation>
@@ -103,20 +103,20 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Printer className="w-10 h-10" />}
-              title="Screen Printing"
-              desc="Durable, vibrant plastisol and rubber prints designed to last through every lap."
+              title="Clothing Brand"
+              desc="Sablon Plastisol dan Rubber kualitas premium dengan warna tajam yang dirancang tahan lama. Solusi terbaik untuk meningkatkan nilai jual brand fashion Anda, awet dipakai berkali-kali tanpa pecah."
               delay={0}
             />
             <ServiceCard
               icon={<Palette className="w-10 h-10" />}
-              title="Full Sublimation"
-              desc="Unlimited colors and complex patterns fused directly into the fabric for zero breathability loss."
+              title="Baju Panitia atau Acara"
+              desc="Eksplorasi warna tanpa batas dan pola rumit yang menyatu langsung dengan kain berkualitas. Material yang nyaman menjaga tim Anda tetap sejuk dan nyaman saat bekerja seharian di lapangan."
               delay={100}
             />
             <ServiceCard
               icon={<ShieldCheck className="w-10 h-10" />}
-              title="Premium Fabrics"
-              desc="Sourced materials that prioritize comfort, sweat-wicking, and durability."
+              title="Baju Komunitas"
+              desc="Material pilihan dengan durabilitas tinggi. Pilihan tepat untuk seragam komunitas yang mengutamakan kenyamanan, kekompakan, dan ketahanan."
               delay={200}
             />
           </div>
@@ -172,7 +172,7 @@ export default function Home() {
           <div className="relative z-10 max-w-4xl mx-auto px-4">
             <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 text-black">Start Your Engine</h2>
             <p className="text-xl md:text-2xl text-black/80 mb-10 font-light">
-              Ready to create your custom team kit or grab some fresh gear?
+              Siap menikmati kualitas tertinggi dengan harga terjangkau?
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button className="bg-black text-white px-10 py-4 font-black uppercase text-lg hover:bg-zinc-800 transition-colors shadow-lg clip-path-slant">
