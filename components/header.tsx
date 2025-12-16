@@ -31,6 +31,9 @@ export function Header() {
             <Link href="/" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
               Home
             </Link>
+            <Link href="/services" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+              Services
+            </Link>
             <Link href="/shop" className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
               Shop
             </Link>
@@ -50,6 +53,9 @@ export function Header() {
           <nav className="md:hidden pb-4 flex flex-col gap-3 border-t border-white/10 pt-4 bg-black">
             <Link href="/" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
               Home
+            </Link>
+            <Link href="/services" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
+              Services
             </Link>
             <Link href="/shop" className="text-base font-bold uppercase text-gray-300 hover:text-white block py-3 px-4 hover:bg-white/5 rounded-md">
               Shop

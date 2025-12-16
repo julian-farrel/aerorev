@@ -5,6 +5,8 @@ import { ScrollAnimation } from "@/components/scroll-animation"
 import { ArrowRight, Printer, Palette, ShieldCheck, Car } from "lucide-react"
 import Link from "next/link"
 
+import { ServiceCard } from "@/components/service-card"
+
 export default function Home() {
   return (
     <>
@@ -190,19 +192,19 @@ export default function Home() {
   )
 }
 
-function ServiceCard({ icon, title, desc, delay }: { icon: React.ReactNode, title: string, desc: string, delay: number }) {
-  return (
-    <ScrollAnimation animation="slideUp" delay={delay}>
-      <div className="bg-card border border-white/5 p-8 h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-          <Car className="w-24 h-24 text-white" />
-        </div>
-        <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-          {icon}
-        </div>
-        <h3 className="text-2xl font-bold text-white uppercase mb-4">{title}</h3>
-        <p className="text-gray-400 leading-relaxed">{desc}</p>
-      </div>
-    </ScrollAnimation>
-  )
-}
+// function ServiceCard({ icon, title, desc, delay }: { icon: React.ReactNode, title: string, desc: string, delay: number }) {
+//   return (
+//     <ScrollAnimation animation="slideUp" delay={delay}>
+//       <div className="bg-card border border-white/5 p-8 h-full hover:border-primary/50 transition-colors group relative overflow-hidden">
+//         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+//           <Car className="w-24 h-24 text-white" />
+//         </div>
+//         <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+//           {icon}
+//         </div>
+//         <h3 className="text-2xl font-bold text-white uppercase mb-4">{title}</h3>
+//         <p className="text-gray-400 leading-relaxed">{desc}</p>
+//       </div>
+//     </ScrollAnimation>
+//   )
+// }
